@@ -60,3 +60,18 @@ function TableRow (arr) {
   this.actions = '<td><button class="btn btn-success">+</button> <button class="btn btn-danger">-</button></td>';
   return this.hole + this.par + this.score + this.over + this.actions; // string
 }
+
+//assign row for hole 1 to variable elem
+let elem = document.getElementById("1");
+//assign function to +
+elem.children[4].children[0].onclick = function(){add1(elem);};
+//create add1
+function add1 (elem) {
+  if(elem.children[2].innerHTML == "-")
+    elem.children[2].innerHTML == "1";
+  else{
+    let currentScore = elem.children[2].innerHTML;
+    currentScore = Number.parseInt(currentScore);
+    elem.children[2].innerHTML = currentScore + 1;
+  }
+}
